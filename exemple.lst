@@ -1,0 +1,89 @@
+exemple.lst
+
+    1:          =00000200	        DD	EQU	$200
+    2:          =00000300	        II	EQU	$300
+    3:          =00000400	        XB	EQU	$400
+    4:          =00000450	        PG	EQU	$450
+    5:
+    6:          =00000200	        	ORG	DD
+	ADDD	4
+	ADDD	$AB54
+	ADDD	56
+	ADDD	375
+	ADDB	$D4
+	ADDB	129
+	ADDB	$1200
+	ADDB	5670
+	LSL	%101
+   16:
+   17:          =00000300	        	ORG	II
+	ADDD	#-56
+	ADDD	#-$45
+	ADDD	#-$2FF
+	ADDD	#-%100110
+	ADDD	#56
+	ADDD	#$45
+	ADDD	#$2FF
+	ADDD	#%100110
+	ADDD	#@1377
+	ADCA	#$BD
+   28:
+   29:          =00000400	        	ORG	XB
+	EORA	14,PC
+	EORA	-5,SP
+	EORA	-5,X
+	EORA	15,Y
+	EORA	-243,X
+	EORA	250,SP
+	EORA	-12345,Y
+	EORA	22345,Y
+	EORA	[$22,Y]
+	EORA	[$1023,Y]
+	EORA	3,-SP
+	EORA	6,SP-
+	EORA	-1,SP-
+	EORA	-8,-SP
+	EORA	5,SP+
+	EORA	7,+SP
+	EORA	-2,SP+
+	EORA	-4,+SP
+	EORA	A,X
+	EORA	D,PC
+	EORA	D,SP
+	EORA	D,X
+	EORA	[D,X]
+	EORA	[D,SP]
+   54:
+   55:          =00000450	        	ORG	PG
+	CALL	$FFEE,8
+	CALL	$56,14
+	CALL	$F3,Y,2
+	CALL	31652,X,4
+	CALL	-2,SP+,12
+   61:
+   62:          =00000500	        	ORG	$500
+	DBEQ	A,$5F4
+	TBNE	D,$41A
+   65:
+   66:          =00000600	        	ORG	$600
+	BRCLR	$2A,$80,$584
+	BRCLR	$2A,$80,$675
+	BRCLR	$1240,$05,$593
+	BRCLR	$1240,$05,$663
+	BRA	$596
+	BRA	$675
+	LBRA	$0007
+	LBRA	$1840
+   75:
+	ASLD	
+	SWI	
+	IDIVS	
+	XGDY	
+   80:
+   81:          =00000655	        	ORG	$655
+LOOP	ADDD	#LBL
+	ADDD	#BIM
+BIM	ADDD	#LOOP
+   85:          =00001250	        LBL	EQU	$1250
+   86:
+   87:

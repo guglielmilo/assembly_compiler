@@ -1,0 +1,1 @@
+OPER structure (FILE *file)
